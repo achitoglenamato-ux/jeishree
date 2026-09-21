@@ -1,0 +1,174 @@
+/* ==========================
+   Gift Room — self-contained page styles
+   Theme: Pink & White (matches main site)
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#fff5f8,#ffe0ec,#ffd0e3);
+    color:#5b1a35;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:998;
+    overflow:hidden;
+}
+
+@keyframes floatUp{
+0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+10%{ opacity:1; }
+90%{ opacity:1; }
+100%{ transform:translateY(-110vh) rotate(15deg); opacity:0; }
+}
+
+.back-link{
+    position:fixed;
+    top:18px;
+    left:18px;
+    z-index:1001;
+    text-decoration:none;
+    color:#ff2d87;
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(10px);
+    padding:10px 18px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.back-link:hover{
+    background:rgba(255,255,255,.95);
+    transform:translateY(-2px);
+}
+
+.gift-page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:120px 20px 80px;
+}
+
+.gift-page h1{
+    font-size:56px;
+    margin-bottom:10px;
+    animation:bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-14px); }
+}
+
+.gift-page h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+    color:#d6336c;
+    margin-bottom:14px;
+}
+
+.gift-page p{
+    font-size:17px;
+    opacity:.85;
+    max-width:500px;
+}
+
+.gift-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+width:80%;
+margin-top:50px;
+}
+
+.gift-box{
+background:linear-gradient(135deg,#ff2d87,#ff6fa5);
+color:white;
+padding:60px;
+font-size:60px;
+border-radius:20px;
+cursor:pointer;
+transition:.4s;
+text-align:center;
+box-shadow:0 10px 25px rgba(255,45,135,.3);
+}
+
+.gift-box:hover{
+transform:scale(1.08) rotate(3deg);
+background:linear-gradient(135deg,#ff6fa5,#ff2d87);
+}
+
+.opened{
+background:#fff;
+border:2px solid #ff6fa5;
+color:#c2185b;
+font-size:19px;
+animation:popIn .5s ease;
+cursor:default;
+}
+
+@keyframes popIn{
+0%{ transform:scale(.7); opacity:0; }
+60%{ transform:scale(1.08); opacity:1; }
+100%{ transform:scale(1); }
+}
+
+#continueWrap{
+margin-top:60px;
+animation:fadeUp 1s ease;
+}
+
+#continueWrap h2{
+    color:#ff2d87;
+}
+
+#continueWrap p{
+    margin-bottom:25px;
+}
+
+.hidden{
+    display:none !important;
+}
+
+button{
+padding:16px 42px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+background:linear-gradient(135deg,#ff2d87,#ff6fa5);
+color:white;
+font-weight:600;
+transition:.35s;
+box-shadow:0 8px 20px rgba(255,45,135,.35);
+}
+
+button:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 28px rgba(255,45,135,.5);
+}
+
+@keyframes fadeUp{
+from{ opacity:0; transform:translateY(40px); }
+to{ opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:600px){
+    .gift-page h1{ font-size:44px; }
+    .gift-page h2{ font-size:28px; }
+    .gift-grid{ width:95%; }
+}
