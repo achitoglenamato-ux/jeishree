@@ -1,0 +1,558 @@
+/* ==========================
+   Happy Birthday Jeishree 🎀
+   Theme: Pink & White
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#fff5f8,#ffe0ec,#ffd0e3);
+    color:#5b1a35;
+    overflow-x:hidden;
+}
+
+/* Floating particles layer (hearts, sparkles, pencils) */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:998;
+    overflow:hidden;
+}
+
+@keyframes floatUp{
+0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+10%{ opacity:1; }
+90%{ opacity:1; }
+100%{ transform:translateY(-110vh) rotate(15deg); opacity:0; }
+}
+
+/* Animated Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,105,180,.12),transparent 20%),
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,.5),transparent 18%),
+    radial-gradient(circle at 50% 80%,rgba(255,45,135,.10),transparent 25%);
+    animation:bgMove 18s linear infinite alternate;
+    z-index:-2;
+}
+
+@keyframes bgMove{
+0%{ transform:translateY(0) scale(1); }
+100%{ transform:translateY(-40px) scale(1.05); }
+}
+
+/* Navigation */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(12px);
+z-index:1000;
+box-shadow:0 2px 20px rgba(255,105,180,.15);
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+letter-spacing:1px;
+color:#ff2d87;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#5b1a35;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff2d87;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:120px 20px;
+text-align:center;
+}
+
+.glass{
+max-width:750px;
+padding:55px;
+border-radius:28px;
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.6);
+box-shadow:0 15px 40px rgba(255,105,180,.25);
+animation:fadeUp 1.2s ease;
+}
+
+.glass h3{
+font-size:20px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#ff2d87;
+margin-bottom:15px;
+}
+
+.glass h1{
+font-family:'Cormorant Garamond',serif;
+font-size:72px;
+line-height:1.1;
+margin-bottom:25px;
+color:#c2185b;
+}
+
+.glass p{
+font-size:18px;
+line-height:1.8;
+opacity:.9;
+margin-bottom:35px;
+}
+
+button{
+padding:16px 42px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+background:linear-gradient(135deg,#ff2d87,#ff6fa5);
+color:white;
+font-weight:600;
+transition:.35s;
+box-shadow:0 8px 20px rgba(255,45,135,.35);
+}
+
+button:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 28px rgba(255,45,135,.5);
+}
+
+button:disabled{
+opacity:.4;
+cursor:not-allowed;
+transform:none;
+box-shadow:none;
+}
+
+.back-link{
+position:fixed;
+top:18px;
+left:18px;
+z-index:1001;
+text-decoration:none;
+color:#ff2d87;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(10px);
+padding:10px 18px;
+border-radius:50px;
+font-size:14px;
+font-weight:600;
+transition:.3s;
+}
+
+.back-link:hover{
+background:rgba(255,255,255,.95);
+transform:translateY(-2px);
+}
+
+.hidden{
+display:none !important;
+}
+
+.fade-in{
+animation:fadeUp 1s ease;
+}
+
+/* Sections */
+
+section{
+padding:100px 10%;
+}
+
+h2{
+font-size:46px;
+text-align:center;
+margin-bottom:50px;
+font-family:'Cormorant Garamond',serif;
+color:#d6336c;
+}
+
+/* Today banner (instead of countdown, since her birthday IS today) */
+
+.today-banner{
+text-align:center;
+}
+
+.today-pill{
+display:inline-block;
+margin:0 auto 40px;
+padding:10px 26px;
+border-radius:50px;
+background:linear-gradient(135deg,#ff2d87,#ff6fa5);
+color:white;
+font-weight:700;
+letter-spacing:1px;
+box-shadow:0 8px 20px rgba(255,45,135,.35);
+animation:pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse{
+0%,100%{ transform:scale(1); }
+50%{ transform:scale(1.05); }
+}
+
+.today-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:10px;
+}
+
+.today-grid div{
+padding:35px 20px;
+background:rgba(255,255,255,.6);
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(10px);
+transition:.3s;
+box-shadow:0 8px 25px rgba(255,105,180,.15);
+}
+
+.today-grid div:hover{
+transform:translateY(-8px);
+}
+
+.today-grid span{
+font-size:42px;
+display:block;
+margin-bottom:8px;
+}
+
+.today-grid p{
+font-weight:600;
+color:#c2185b;
+}
+
+/* About Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.card{
+padding:35px;
+background:rgba(255,255,255,.6);
+border-radius:20px;
+text-align:center;
+font-size:26px;
+transition:.35s;
+box-shadow:0 8px 25px rgba(255,105,180,.12);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+background:rgba(255,255,255,.85);
+}
+
+.card h3{
+margin-top:18px;
+font-size:20px;
+color:#c2185b;
+}
+
+/* Journey */
+
+#journey{
+text-align:center;
+}
+
+#journey p{
+font-size:20px;
+margin-bottom:35px;
+}
+
+/* Footer */
+
+footer{
+padding:35px;
+text-align:center;
+background:linear-gradient(135deg,#ff2d87,#d6336c);
+color:#fff;
+font-weight:500;
+}
+
+/* Animation */
+
+@keyframes fadeUp{
+from{ opacity:0; transform:translateY(40px); }
+to{ opacity:1; transform:translateY(0); }
+}
+
+/* ==========================
+   Stranger Things / El Corner
+========================== */
+
+#st-corner{
+padding:100px 20px;
+text-align:center;
+background:linear-gradient(135deg,#170209,#2b0716,#3a0a21);
+color:#ffe3ef;
+}
+
+#st-corner h2{
+font-family:'Bebas Neue','Cormorant Garamond',serif;
+letter-spacing:4px;
+color:#ff2d87;
+text-shadow:0 0 18px rgba(255,45,135,.8),0 0 40px rgba(255,45,135,.4);
+}
+
+.st-sub{
+color:#ffc9de;
+opacity:.9;
+margin-bottom:36px;
+font-size:16px;
+}
+
+.st-glow-orb{
+width:80px;
+height:80px;
+border-radius:50%;
+margin:0 auto 36px;
+background:radial-gradient(circle at 35% 30%,#ff9ec7,#ff2d87 70%);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+box-shadow:0 0 25px rgba(255,45,135,.8),0 0 55px rgba(255,45,135,.45);
+animation:orbPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes orbPulse{
+0%,100%{ transform:scale(1); box-shadow:0 0 25px rgba(255,45,135,.8),0 0 55px rgba(255,45,135,.45); }
+50%{ transform:scale(1.08); box-shadow:0 0 35px rgba(255,45,135,1),0 0 70px rgba(255,45,135,.6); }
+}
+
+.st-song-card{
+max-width:420px;
+margin:0 auto 30px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,45,135,.35);
+border-radius:18px;
+padding:26px;
+}
+
+.st-song-card p.song-title{
+font-family:'Cormorant Garamond',serif;
+font-size:26px;
+color:#ff9ec7;
+margin-bottom:4px;
+}
+
+.st-song-card p.song-artist{
+opacity:.75;
+font-size:14px;
+margin-bottom:18px;
+}
+
+.st-song-card a button{
+background:linear-gradient(135deg,#ff2d87,#c2185b);
+}
+
+.st-caption{
+margin-top:26px;
+color:#ffc9de;
+font-size:15px;
+opacity:.9;
+max-width:520px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ==========================
+   Hawkins Wall — photo frames
+========================== */
+
+.wall-heading{
+margin-top:70px;
+text-align:center;
+}
+
+.wall-tape{
+display:inline-block;
+font-size:22px;
+margin-bottom:6px;
+}
+
+.wall-heading h3{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+color:#ff6fa5;
+letter-spacing:2px;
+margin-bottom:6px;
+}
+
+.wall-heading p{
+color:#ffc9de;
+opacity:.85;
+font-size:14px;
+margin-bottom:34px;
+}
+
+.photo-wall{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:34px 26px;
+max-width:1000px;
+margin:0 auto;
+padding:10px 10px 20px;
+}
+
+.frame{
+position:relative;
+background:#fffdfb;
+padding:12px 12px 34px;
+width:190px;
+border-radius:4px;
+box-shadow:0 12px 28px rgba(0,0,0,.45), 0 0 0 1px rgba(255,45,135,.15);
+transition:transform .4s ease, box-shadow .4s ease;
+}
+
+.frame img{
+display:block;
+width:100%;
+height:190px;
+object-fit:cover;
+border-radius:2px;
+filter:saturate(1.05) contrast(1.03);
+}
+
+.frame::after{
+content:"";
+position:absolute;
+inset:0;
+border-radius:4px;
+box-shadow:inset 0 0 25px rgba(255,45,135,0);
+transition:box-shadow .4s ease;
+pointer-events:none;
+}
+
+.frame:hover{
+transform:translateY(-10px) scale(1.04) rotate(0deg) !important;
+box-shadow:0 20px 40px rgba(255,45,135,.55), 0 0 0 1px rgba(255,45,135,.4);
+z-index:5;
+}
+
+.frame:hover::after{
+box-shadow:inset 0 0 30px rgba(255,45,135,.25);
+}
+
+.tape{
+position:absolute;
+top:-14px;
+left:50%;
+transform:translateX(-50%) rotate(-3deg);
+width:60px;
+height:22px;
+background:rgba(255,255,255,.35);
+border:1px solid rgba(255,255,255,.5);
+box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+
+.frame-1{ transform:rotate(-4deg); }
+.frame-2{ transform:rotate(3deg); }
+.frame-3{ transform:rotate(-2deg); }
+.frame-4{ transform:rotate(4deg); }
+.frame-5{ transform:rotate(-3deg); }
+.frame-6{ transform:rotate(2deg); }
+.frame-7{ transform:rotate(-5deg); }
+
+/* ==========================
+   Art Corner
+========================== */
+
+#art-corner{
+text-align:center;
+}
+
+.art-sub{
+opacity:.8;
+margin-bottom:35px;
+font-size:16px;
+}
+
+.canvas-frame{
+max-width:520px;
+margin:0 auto 30px;
+padding:14px;
+background:#fff;
+border-radius:14px;
+box-shadow:0 15px 40px rgba(255,105,180,.25), 0 0 0 8px #ffe0ec;
+}
+
+.canvas-frame svg{
+width:100%;
+height:auto;
+border-radius:6px;
+display:block;
+}
+
+.art-caption{
+max-width:520px;
+margin:0 auto;
+font-size:16px;
+opacity:.85;
+line-height:1.7;
+}
+
+@media(max-width:900px){
+.glass h1{ font-size:52px; }
+.today-grid{ grid-template-columns:repeat(2,1fr); }
+nav{ padding:15px 6%; }
+}
+
+@media(max-width:600px){
+.glass{ padding:35px 25px; }
+.glass h1{ font-size:40px; }
+.today-grid{ grid-template-columns:1fr; }
+nav ul{ display:none; }
+h2{ font-size:34px; }
+button{ width:100%; }
+.frame{ width:140px; padding:8px 8px 26px; }
+.frame img{ height:140px; }
+}
