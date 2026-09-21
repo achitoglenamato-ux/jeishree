@@ -1,0 +1,245 @@
+/* ==========================
+   Secret Letter — self-contained page styles
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#fff5f8,#ffe0ec,#ffd0e3);
+    color:#5b1a35;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:998;
+    overflow:hidden;
+}
+
+@keyframes floatUp{
+0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+10%{ opacity:1; }
+90%{ opacity:1; }
+100%{ transform:translateY(-110vh) rotate(15deg); opacity:0; }
+}
+
+.back-link{
+    position:fixed;
+    top:18px;
+    left:18px;
+    z-index:1001;
+    text-decoration:none;
+    color:#ff2d87;
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(10px);
+    padding:10px 18px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.back-link:hover{
+    background:rgba(255,255,255,.95);
+    transform:translateY(-2px);
+}
+
+.letter-page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:120px 20px 80px;
+text-align:center;
+}
+
+#envelopeWrap h1{
+    font-size:50px;
+    margin-bottom:8px;
+}
+
+#envelopeWrap h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    color:#d6336c;
+    margin-bottom:8px;
+}
+
+#envelopeWrap p{
+    opacity:.8;
+    margin-bottom:40px;
+}
+
+.envelope{
+    position:relative;
+    width:220px;
+    height:150px;
+    margin:0 auto;
+    cursor:pointer;
+    background:#ff6fa5;
+    border-radius:10px;
+    box-shadow:0 15px 35px rgba(255,45,135,.4);
+    transition:.35s;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.envelope:hover{
+    transform:translateY(-6px) scale(1.03);
+}
+
+.envelope-body{
+    font-size:44px;
+    padding-bottom:14px;
+}
+
+.envelope-flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-top:80px solid #ff2d87;
+    transition:transform .6s ease;
+    transform-origin:top;
+}
+
+.envelope.open .envelope-flap{
+    transform:rotateX(180deg);
+}
+
+.envelope.open{
+    animation:shake .4s ease;
+}
+
+@keyframes shake{
+    0%,100%{ transform:translateX(0); }
+    25%{ transform:translateX(-6px); }
+    75%{ transform:translateX(6px); }
+}
+
+.letter-card{
+max-width:600px;
+background:rgba(255,255,255,.65);
+backdrop-filter:blur(14px);
+padding:50px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(255,105,180,.25);
+text-align:left;
+margin-bottom:60px;
+}
+
+.letter-card h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    color:#ff2d87;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.letter-card p{
+    font-size:17px;
+    line-height:1.9;
+    margin-bottom:18px;
+    opacity:.95;
+}
+
+.signature{
+    text-align:right;
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    font-style:italic;
+    color:#c2185b;
+}
+
+.verses-heading{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    color:#d6336c;
+    margin-bottom:35px;
+}
+
+.verses-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+max-width:900px;
+margin-bottom:50px;
+}
+
+.verse-card{
+background:rgba(255,255,255,.65);
+border-left:3px solid #ff6fa5;
+border-radius:14px;
+padding:26px;
+text-align:left;
+transition:.3s;
+}
+
+.verse-card:hover{
+    background:rgba(255,255,255,.9);
+    transform:translateY(-4px);
+}
+
+.verse-card p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:19px;
+    line-height:1.6;
+    font-style:italic;
+    margin-bottom:10px;
+    color:#5b1a35;
+}
+
+.verse-card span{
+    font-size:14px;
+    color:#ff2d87;
+    letter-spacing:.5px;
+    font-weight:600;
+}
+
+#letterContent button{
+padding:16px 42px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+background:linear-gradient(135deg,#ff2d87,#ff6fa5);
+color:white;
+font-weight:600;
+transition:.35s;
+}
+
+#letterContent button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(255,45,135,.4);
+}
+
+.hidden{
+    display:none !important;
+}
+
+.fade-in{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{ opacity:0; transform:translateY(40px); }
+to{ opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:600px){
+    .letter-card{ padding:32px 24px; }
+    .verses-heading{ font-size:26px; }
+}
